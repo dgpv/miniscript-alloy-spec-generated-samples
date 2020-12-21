@@ -18,6 +18,12 @@ at commit 8f1e80d95c49d49563b97fb97fd3ed38b55b4672 with "main" run clause,
 but with `main_search_predicate` modified to say `not correctness_holds_for_all_nodes`.
 This means that all samples represent scripts that are not correct.
 
+The `8f1e80d95c49d49563b97fb97fd3ed38b55b4672_timelock_conflicts.zip` file contains
+1773 .dot files that are a result of running the same automation
+at commit 8f1e80d95c49d49563b97fb97fd3ed38b55b4672 with "main" run clause,
+but with `main_search_predicate` modified to say `tl_conflict in timelocks[RootNode]`.
+This means that all samples represent scripts that contain a timelock conflict.
+
 These dot files can be processed by the `tools/parse_miniscript_dot.py`
 script in the aforementioned miniscript-alloy-spec repository.
 
