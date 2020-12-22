@@ -24,6 +24,17 @@ at commit 8f1e80d95c49d49563b97fb97fd3ed38b55b4672 with "main" run clause,
 but with `main_search_predicate` modified to say `tl_conflict in timelocks[RootNode]`.
 This means that all samples represent scripts that contain a timelock conflict.
 
+The `8f1e80d95c49d49563b97fb97fd3ed38b55b4672_malleable.zip` file contains
+3492 .dot files that are a result of running the same automation
+at commit 8f1e80d95c49d49563b97fb97fd3ed38b55b4672 with "main" run clause,
+but with `main_search_predicate` modified to say `RootNode not in NonMalleableHolds`
+and commented out `s[RootNode]`. This is the same as for
+`33b85f29d53e2623b955d55afe9061f5d0fc96d3_malleable.zip`, but with more relaxed
+rules (no `s[RootNode]`, what should be irrelevant if malleability properties
+are not enforced). It is interesting that there were much more duplicates
+without `s[RootNode]`, though, as only 3492 files out of 10000 was unique,
+compared to 7024 in the `33b85f29d53e2623b955d55afe9061f5d0fc96d3_malleable.zip`.
+
 These dot files can be processed by the `tools/parse_miniscript_dot.py`
 script in the aforementioned miniscript-alloy-spec repository.
 
